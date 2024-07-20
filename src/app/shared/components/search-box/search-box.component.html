@@ -1,0 +1,13 @@
+<!-- (keyup.enter)="emitValue(txtInput.value)" -->
+<div class="col">
+<input
+  type="text"
+  [placeholder]= "placeholder"
+  class="form-control"
+  (keyup)="onKeyPress(txtInput.value)"
+  [value]="initialValue"
+  #txtInput
+>
+<button class="col" (click)="clearSearch(txtInput)">Limpiar</button>
+</div>
+

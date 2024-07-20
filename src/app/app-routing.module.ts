@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './shared/pages/homePage/homePage.component';
 import { AboutPageComponent } from './shared/pages/aboutPage/aboutPage.component';
 import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
+import { CountriesModule } from './countries/countries.module';
 
 const routes: Routes = [
   { path: 'home',
@@ -19,8 +20,12 @@ const routes: Routes = [
     component: ContactPageComponent
   },
   {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule )
+  },
+  {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'countries'
   }
 ];
 
